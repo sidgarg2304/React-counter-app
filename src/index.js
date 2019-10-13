@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Counter from './components/counterComponent';
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+//ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Counter />, document.getElementById('root'));
 
 
