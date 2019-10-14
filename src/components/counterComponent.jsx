@@ -9,6 +9,18 @@ class Counter extends Component {
        imageURL:'https://picsum.photos/200'
 
     };
+
+    // constructor(){
+    //     super();
+    //     this.handleIncrement= this.handleIncrement.bind(this);
+    // }
+
+     handleIncrement = () => {
+         console.log("increment clicked", this);
+
+         this.setState({ count : this.state.count+1});
+     }
+
     render() { 
         
         let color = this.getBadgeClasses();
@@ -26,7 +38,7 @@ how to comemnt in jsx
  any java script expression bettween curly braces 
 */}
         <h1> <span className={this.getBadgeClasses()}>{this.formatCount()}</span> 
-         <button className="btn btn-secondary btn-sm">Increment</button> </h1>
+         <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button> </h1>
         
 
         
