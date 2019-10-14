@@ -6,7 +6,9 @@ class Counter extends Component {
     // any data that component needs
    state = { 
        count: 0,
-       imageURL:'https://picsum.photos/200'
+       imageURL:'https://picsum.photos/200',
+       value:this.props.counter.value
+
 
     };
 
@@ -40,7 +42,8 @@ how to comemnt in jsx
         <h1> <span className={this.getBadgeClasses()}>{this.formatCount()}</span> 
          <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button> </h1>
         
-
+         <button onClick ={ () => this.props.onDelete(this.props.counter.id)}
+         className="btn btn-danger btn-sm m-2"> Delete </button>
         
         </div>);
     }
