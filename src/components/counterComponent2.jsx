@@ -15,16 +15,39 @@ class Counters extends Component {
         ]
      }
 
+
+     handleIncrement=()=>{
+     console.log("Increment handler");
+     };
+
 // declare handle  delete object that gets value from a function
     handleDelete = (counterId) => {
         console.log("delete handler", counterId);
+        const counters = this.state.counters.filter(c => c.id !== counterId);
+
+        this.setState({counters});
     }
+
+    // handleReset = () =>{
+
+    //     const counters=this.state.counters.map(c => {
+    //         c.value=0;
+    //         return c;
+    //     })
+
+    //     this.setState({counters});
+    // };
     render() { 
         return ( <div> 
+
+            <button 
+            //onClick={this.handleReset}
+            className="btn btn-primary btn-2 m-2">Reset</button>
       {this.state.counters.map(counter =>(
          <Counter 
          key={counter.id} 
          onDelete={this.handleDelete} 
+         onIncrement={this.handleIncrement}
          counter={counter}
          />))}
 
